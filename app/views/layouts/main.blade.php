@@ -83,7 +83,7 @@
                     </div><!-- end user-menu -->
 
                     <div id="view-cart">
-                        <a href="store/cart">{{ HTML::image('img/blue-cart.gif', 'View Cart') }} View Cart
+                        <a href="/store/cart">{{ HTML::image('img/blue-cart.gif', 'View Cart') }} View Cart
                             @if (Cart::totalItems())
                                ({{ Cart::totalItems() }})
                             @endif

@@ -4,6 +4,126 @@
 		"selected_items":
 		[
 			[
+				"HTM",
+				"HTML-link	HTML-link"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"HTML",
+				"HTML-image	HTML-image"
+			],
+			[
+				"pr",
+				"price"
+			],
+			[
+				"HTML-",
+				"HTML-image	HTML-image"
+			],
+			[
+				"f",
+				"foreach	blade-foreach"
+			],
+			[
+				"Form",
+				"Form-close	Form-close"
+			],
+			[
+				"F",
+				"Form-close	Form-close"
+			],
+			[
+				"Htm",
+				"HTML-image	HTML-image"
+			],
+			[
+				"Fo",
+				"Form-hidden	Form-hidden"
+			],
+			[
+				"id",
+				"identifier"
+			],
+			[
+				"V",
+				"View-make	View-make"
+			],
+			[
+				"pro",
+				"product"
+			],
+			[
+				"qu",
+				"quantity"
+			],
+			[
+				"fu",
+				"fun	function …"
+			],
+			[
+				"user",
+				"user"
+			],
+			[
+				"de",
+				"dev-master"
+			],
+			[
+				"Catego",
+				"categories"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"Ht",
+				"HTML-image	HTML-image"
+			],
+			[
+				"pa",
+				"password_confirmation"
+			],
+			[
+				"H",
+				"HTML-link	HTML-link"
+			],
+			[
+				"if",
+				"if	blade-if"
+			],
+			[
+				"Auth-l",
+				"Auth-logout	Auth-logout"
+			],
+			[
+				"with",
+				"withInput"
+			],
+			[
+				"Re",
+				"Redirect-to	Redirect-to"
+			],
+			[
+				"In",
+				"Input-get	Input-get"
+			],
+			[
+				"fun",
+				"fun	function …"
+			],
+			[
+				"re",
+				"required"
+			],
+			[
+				"uniq",
+				"unique"
+			],
+			[
 				"c",
 				"class	class …"
 			],
@@ -28,20 +148,12 @@
 				"cat_id"
 			],
 			[
-				"pro",
-				"products"
-			],
-			[
 				"Vie",
 				"View-make	View-make"
 			],
 			[
 				"HT",
 				"HTML-link	HTML-link"
-			],
-			[
-				"HTML",
-				"HTML-image	HTML-image"
 			],
 			[
 				"ad",
@@ -90,10 +202,6 @@
 			[
 				"pu",
 				"public"
-			],
-			[
-				"In",
-				"Input-get	Input-get"
 			],
 			[
 				"View",
@@ -146,10 +254,6 @@
 			[
 				"category",
 				"category_id"
-			],
-			[
-				"th",
-				"thumbInput"
 			],
 			[
 				"ch",
@@ -216,10 +320,6 @@
 				"font-size"
 			],
 			[
-				"fun",
-				"function"
-			],
-			[
 				"A",
 				"Auth-guest	Auth-guest"
 			],
@@ -246,14 +346,6 @@
 			[
 				"Lo",
 				"LoginController"
-			],
-			[
-				"fu",
-				"function"
-			],
-			[
-				"Re",
-				"Redirect-home	Redirect-home"
 			],
 			[
 				"Redirect",
@@ -294,44 +386,16 @@
 			[
 				"habr",
 				"habr"
-			],
-			[
-				"de",
-				"dev"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "app/routes.php",
-			"settings":
-			{
-				"buffer_size": 624,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/Category.php",
-			"settings":
-			{
-				"buffer_size": 218,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 237,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 60.0,
+		"height": 375.0,
 		"selected_items":
 		[
 			[
@@ -440,16 +504,56 @@
 	},
 	"file_history":
 	[
-		"/Z/var/www/vshop.loc/today.TODO",
+		"/Z/var/www/clean.loc/id_rsa.pub",
+		"/Z/var/www/vshop.loc/readme.md",
+		"/Z/var/www/vshop.loc/public/js/main.js",
+		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/views/layouts/main.blade.php",
+		"/Z/var/www/vshop.loc/app/views/layouts/main.blade.php",
+		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/contact.html",
 		"/Z/var/www/vshop.loc/app/controllers/StoreController.php",
+		"/Z/var/www/vshop.loc/app/views/store/contact.blade.php",
+		"/Z/var/www/vshop.loc/app/filters.php",
+		"/Z/var/www/vshop.loc/app/views/store/cart.blade.php",
+		"/Z/var/www/vshop.loc/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/command_astext.txt",
+		"/Z/var/www/vshop.loc/composer.json",
+		"/Z/var/www/vshop.loc/public/css/main.css",
+		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/views/store/cart.blade.php",
+		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/shopping-cart.html",
+		"/Z/var/www/vshop.loc/app/views/store/view.blade.php",
+		"/Z/var/www/vshop.loc/app/views/store/category.blade.php",
+		"/Z/var/www/vshop.loc/app/views/store/search.blade.php",
+		"/Z/var/www/vshop.loc/app/views/store/index.blade.php",
+		"/Z/var/www/vshop.loc/app/config/app.php",
+		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/LICENSE.md",
+		"/Z/var/www/vshop.loc/vendor/swiftmailer/swiftmailer/test-suite/templates/sweety/css/main.css",
+		"/Z/var/www/vshop.loc/app/config/mail.php",
+		"/Z/var/www/vshop.loc/vendor/laravel/framework/src/Illuminate/Database/Eloquent/MassAssignmentException.php",
 		"/Z/var/www/vshop.loc/app/controllers/CategoriesController.php",
+		"/Z/var/www/vshop.loc/app/controllers/ProductsController.php",
+		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/signin.html",
+		"/Z/var/www/vshop.loc/app/views/users/signin.blade.php",
+		"/Z/var/www/vshop.loc/app/views/users/newaccount.blade.php",
+		"/Z/var/www/vshop.loc/app/routes.php",
+		"/Z/var/www/vshop.loc/app/controllers/UsersController.php",
+		"/Z/var/www/vshop.loc/app/models/User.php",
+		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/controllers/UsersController.php",
+		"/Z/var/www/vshop.loc/app/views/categories/index.blade.php",
+		"/Z/var/www/vshop.loc/app/models/Category.php",
+		"/Z/var/www/vshop.loc/vendor/predis/predis/lib/Predis/ResponseObjectInterface.php",
+		"/Z/var/www/vshop.loc/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/UriSigner.php",
+		"/Z/var/www/vshop.loc/app/database/seeds/UserTableSeeder.php",
+		"/Z/var/www/vshop.loc/app/database/seeds/DatabaseSeeder.php",
+		"/Z/var/www/vshop.loc/app/database/migrations/2014_02_15_133313_create_users_table.php",
+		"/Z/var/www/vshop.loc/app/config/local/database.php",
+		"/Z/var/www/vshop.loc/app/config/database.php",
+		"/Z/var/www/vshop.loc/vendor/symfony/console/Symfony/Component/Console/Tests/Fixtures/definition_astext.txt",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Z/var/www/vshop.loc/today.TODO",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/DocBlockr/Base File.sublime-settings",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/User/Gist.sublime-settings",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/Gist/Gist.sublime-settings",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Installed Packages/Gist.sublime-package",
-		"/Z/var/www/vshop.loc/public/js/main.js",
 		"/Z/var/www/vshop.loc/vshop.sublime-project",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Default (Windows).sublime-keymap",
 		"/Z/var/www/vshop.loc/index.php",
@@ -459,36 +563,23 @@
 		"/Z/var/www/vshop.loc/public/index.php",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
-		"/Z/var/www/vshop.loc/app/views/layouts/main.blade.php",
-		"/Z/var/www/vshop.loc/app/views/store/search.blade.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/controllers/StoreController.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/search-results.html",
 		"/Z/var/www/vshop.loc/app/controllers/BaseController.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/category.html",
-		"/Z/var/www/vshop.loc/app/views/store/category.blade.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/views/store/category.blade.php",
-		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/views/layouts/main.blade.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/controllers/BaseController.php",
-		"/Z/var/www/vshop.loc/app/controllers/ProductsController.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/index.html",
-		"/Z/var/www/vshop.loc/app/views/store/view.blade.php",
-		"/Z/var/www/vshop.loc/app/views/store/index.blade.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/starting-resources/product.html",
 		"/Z/var/www/vshop.loc/app/libs/Availability.php",
 		"/Z/var/www/vshop.loc/app/start/global.php",
-		"/Z/var/www/vshop.loc/app/routes.php",
 		"/Z/var/www/vshop.loc/app/views/products/index.blade.php",
-		"/Z/var/www/vshop.loc/app/config/app.php",
 		"/Z/var/www/vshop.loc/app/models/Product.php",
-		"/Z/var/www/vshop.loc/app/models/Category.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/controllers/ProductsController.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/views/products/index.blade.php",
 		"/C/Users/Mykola/Downloads/tutsplus.com - Build an eCommerce App in Laravel ® vampiri6ka/src/src/final-source/app/controllers/CategoriesController.php",
 		"/Z/var/www/vshop.loc/app/database/migrations/2014_02_14_174506_create_products_table.php",
-		"/Z/var/www/vshop.loc/composer.json",
-		"/Z/var/www/vshop.loc/app/views/categories/index.blade.php",
 		"/Z/var/www/vshop.loc/app/database/migrations/2014_02_14_162505_create_categories_table.php",
-		"/Z/var/www/vshop.loc/app/config/local/database.php",
 		"/Z/etc/phpmyadmin/config.inc.php",
 		"/Z/etc/php5/apache2/php.ini",
 		"/Z/var/www/vshop.loc/bootstrap/start.php",
@@ -540,34 +631,7 @@
 		"/Z/var/www/kolybasov.loc/app/views/items/edit.blade.php",
 		"/Z/var/www/habr.loc/app/views/offers/create.blade.php",
 		"/Z/var/www/habr.loc/app/views/offers/edit.blade.php",
-		"/Z/var/www/kolybasov.loc/app/views/items/create.blade.php",
-		"/Z/var/www/kolybasov.loc/app/config/local/app.php",
-		"/Z/var/www/kolybasov.loc/app/tests/controllers/GoodsTest.php",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_02_03_105640_add_foreign_user_id_and_item_id_to_comments_table.php",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_02_03_104503_add_foreign_company_id_to_items_table.php",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_02_03_104617_add_foreign_user_id_delivery_id_and_status_id_to_orders_table.php",
-		"/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.errors.log",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_01_30_224353_add_foreign_company_id_and_category_id_to_items_table.php",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_02_03_100817_pivot_characteristic_item_table.php",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_02_03_100905_pivot_item_order_table.php",
-		"/Z/var/www/kolybasov.loc/app/database/2014_01_30_185201_add_foreign_order_id_and_goods_id_to_order_items_table.php",
-		"/Z/var/www/kolybasov.loc/app/views/goods/create.blade.php",
-		"/Z/var/www/kolybasov.loc/app/views/goods/index.blade.php",
-		"/Z/var/www/kolybasov.loc/app/controllers/GoodsController.php",
-		"/Z/var/www/kolybasov.loc/app/models/Good.php",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_01_29_220925_create_comments_table.php",
-		"/Z/var/www/kolybasov.loc/app/database/migrations/2014_01_29_220158_create_items_table.php",
-		"/Z/var/www/kolybasov.loc/app/views/goods/scripts.blade.php",
-		"/Z/var/www/kolybasov.loc/public/assets/css/styles.css",
-		"/Z/var/www/kolybasov.loc/public/assets/js/scripts.js",
-		"/Z/var/www/kolybasov.loc/app/views/goods/edit.blade.php",
-		"/Z/var/www/kolybasov.loc/app/controllers/CompaniesController.php",
-		"/Z/var/www/kolybasov.loc/app/models/Status.php",
-		"/Z/var/www/kolybasov.loc/app/models/Role.php",
-		"/Z/var/www/kolybasov.loc/app/models/Company.php",
-		"/Z/var/www/kolybasov.loc/app/models/Delivery.php",
-		"/Z/var/www/kolybasov.loc/app/models/Characteristic.php",
-		"/Z/var/www/kolybasov.loc/app/views/goods/show.blade.php"
+		"/Z/var/www/kolybasov.loc/app/views/items/create.blade.php"
 	],
 	"find":
 	{
@@ -585,6 +649,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"categories",
+			"firstname",
+			"');\n",
 			"title",
 			"name",
 			"Category",
@@ -636,109 +703,14 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/routes.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 624,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								624,
-								624
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/models/Category.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 218,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/Mykola/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								82,
-								72
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"input":
 	{
@@ -786,6 +758,38 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"main.",
+				"app\\views\\layouts\\main.blade.php"
+			],
+			[
+				"cart",
+				"app\\views\\store\\cart.blade.php"
+			],
+			[
+				"main.bla",
+				"app\\views\\layouts\\main.blade.php"
+			],
+			[
+				"main",
+				"app\\views\\layouts\\main.blade.php"
+			],
+			[
+				"categories/",
+				"app\\views\\categories\\index.blade.php"
+			],
+			[
+				"route",
+				"app\\routes.php"
+			],
+			[
+				"user",
+				"app\\models\\User.php"
+			],
+			[
+				"data",
+				"app\\database\\seeds\\DatabaseSeeder.php"
+			]
 		],
 		"width": 0.0
 	},
