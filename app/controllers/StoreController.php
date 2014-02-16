@@ -5,7 +5,14 @@ class StoreController extends BaseController {
   public function __construct() {
     parent::__construct();
     $this->beforeFilter('csrf', array('on' => 'post'));
-    $this->beforeFilter('auth', array('only' => array('postAddtocart', 'getCart', 'getRemoveitem')));
+    $this->beforeFilter('auth', array('only' => array(
+      'postAddtocart', 
+      'getCart', 
+      'getRemoveitem', 
+      'getWishlist', 
+      'postAddtowishlist', 
+      'getRemovefromwishlist'
+    )));
   }
   
   public function getIndex() {
@@ -64,5 +71,11 @@ class StoreController extends BaseController {
   public function getContact()
   {
     return View::make('store.contact');
+  }
+
+  public function getWishlist()
+  {
+    return View::make('store.wishlist')
+      ->with('products', array());
   }
 }

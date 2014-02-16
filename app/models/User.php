@@ -66,4 +66,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	/**
+	 * Get items from user wishlist
+	 * @return Array
+	 */
+	public function wishlist()
+	{
+		return $this->belongsToMany('Wishlist', 'wishlist');
+	}
+
 }
