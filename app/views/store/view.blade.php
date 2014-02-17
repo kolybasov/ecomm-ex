@@ -21,6 +21,15 @@
                ADD TO CART
           </button>
       {{ Form::close() }}
+
+      {{ Form::open(array('url' => 'store/addtowishlist')) }}
+          {{ Form::hidden('id', $product->id) }}
+
+          <button type="submit" class="secondary-cart-btn">
+              {{ HTML::image('img/white-cart.gif', 'Add to Wishlist') }}
+               ADD TO WISHLIST
+          </button>
+      {{ Form::close() }}
   </div><!-- end product-details -->
   <div id="product-info">
       <p class="price">${{ $product->price }}</p>

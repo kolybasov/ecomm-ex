@@ -75,7 +75,28 @@ class StoreController extends BaseController {
 
   public function getWishlist()
   {
+    /*$wishlist = Auth::user()->wishlist;
+
+    return var_dump($wishlist);*/
     return View::make('store.wishlist')
-      ->with('products', array());
+      ->with('products', Auth::user()->wishlist);
+  }
+
+  public function postAddtowishlist()
+  {
+    $product = Product::find(Input::get('id'));
+
+    if ($product) {
+      Auth::user()->wishlist()->attach($product->id);
+    }
+
+    return Redirect::back()
+      ->with('message', 'Added to wishlist');
+  }
+
+  public function getRemovefromwishlist($id)
+  {
+    Auth::user()->wishlist()->detach($id);
+    return Redirect::to('store/wishlist');
   }
 }

@@ -59,10 +59,11 @@
                                         <a href="#">{{ HTML::image('img/user-icon.gif', Auth::user()->firstname) }} {{ Auth::user()->firstname }} {{ HTML::image('img/down-arrow.gif', Auth::user()->firstname) }}</a>
                                         <ul>
                                             @if(Auth::user()->admin == 1) 
-                                                <li>{{ HTML::link('admin/categories', 'Manage categories') }}</li>   
-                                                <li>{{ HTML::link('admin/products', 'Manage products') }}</li>   
+                                                <li>{{ HTML::link('/admin/categories', 'Manage categories') }}</li>   
+                                                <li>{{ HTML::link('/admin/products', 'Manage products') }}</li>   
                                             @endif
-                                            <li>{{ HTML::link('users/signout', 'Sign Out') }}</li>
+                                            <li>{{ HTML::link('/store/wishlist', 'Wishlist') }}</li>
+                                            <li>{{ HTML::link('/users/signout', 'Sign Out') }}</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -73,8 +74,8 @@
                                     <li>
                                         <a href="#">{{ HTML::image('img/user-icon.gif', 'Sign In') }} Sign In {{ HTML::image('img/down-arrow.gif', 'Sign In') }}</a>
                                         <ul>
-                                            <li>{{ HTML::link('users/signin', 'Sign In') }}</li>
-                                            <li>{{ HTML::link('users/newaccount', 'Sign Up') }}</li>
+                                            <li>{{ HTML::link('/users/signin', 'Sign In') }}</li>
+                                            <li>{{ HTML::link('/users/newaccount', 'Sign Up') }}</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -121,9 +122,9 @@
                     <div id="my-account">
                         <h4>MY ACCOUNT</h4>
                         <ul>
-                            <li>{{ HTML::link('users/signin', 'Sign In') }}</li>
-                            <li>{{ HTML::link('users/newaccount', 'Sign Up') }}</li>
-                            <li><a href="store/cart">Shopping Cart</a></li>
+                            <li>{{ HTML::link('/users/signin', 'Sign In') }}</li>
+                            <li>{{ HTML::link('/users/newaccount', 'Sign Up') }}</li>
+                            <li><a href="/store/cart">Shopping Cart</a></li>
                         </ul>
                     </div><!-- end my-account -->
                     <div id="info">
@@ -137,7 +138,7 @@
                         <h4>EXTRAS</h4>
                         <ul>
                             <li><a href="#">About Us</a></li>
-                            <li>{{ HTML::link('store/contact', 'Contact Us') }}</li>
+                            <li>{{ HTML::link('/store/contact', 'Contact Us') }}</li>
                         </ul>
                     </div><!-- end extras -->
                 </section><!-- end links -->
