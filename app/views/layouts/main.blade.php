@@ -62,6 +62,7 @@
                                                 <li>{{ HTML::link('/admin/categories', 'Manage categories') }}</li>   
                                                 <li>{{ HTML::link('/admin/products', 'Manage products') }}</li>   
                                             @endif
+                                            <li>{{ HTML::link('/orders/ordershistory', 'Orders history') }}</li>
                                             <li>{{ HTML::link('/store/wishlist', 'Wishlist') }}</li>
                                             <li>{{ HTML::link('/users/signout', 'Sign Out') }}</li>
                                         </ul>

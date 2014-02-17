@@ -3,7 +3,7 @@
 @section('content')
 	<div id="shopping-cart">
 	    <h1>Shopping Cart & Checkout</h1>
-	    <form action="http://www.paypal.com/cgi-bin/webscr" method="post">
+	    	@if (Cart::totalItems() > 0)
 	        <table border="1">
 	            <tr>
 	                <th>#</th>
@@ -37,19 +37,23 @@
 	                    Subtotal: ${{ Cart::total() }}<br />
 	                    <span>TOTAL: ${{ Cart::total() }}</span><br />
 
-	                    <input type="hidden" name="cmd" value="_xclick">
-	                    <input type="hidden" name="business" value="office@shop.com"> 
-	                    <input type="hidden" name="item_name" value="eCommerce Store Purchase"> 
-	                    <input type="hidden" name="amount" value="{{ Cart::total() }}">
-	                    <input type="hidden" name="first_name" value="{{ Auth::user()->firstname }}">
-	                    <input type="hidden" name="last_name" value="{{ Auth::user()->lastname }}">
-	                    <input type="hidden" name="email" value="{{ Auth::user()->email }}">
+                  		<!--{{ Form::open(array('url' => 'store/addorder')) }}
+			          	{{ Form::hidden('id', $product->id) }}
 
-	                    {{ HTML::link('/', 'Continue Shopping', array('class' => 'tertiary-btn')) }}
-	                    <input type="submit" value="CHECKOUT WITH PAYPAL" class="secondary-cart-btn">
+			          	<button type="submit" class="secondary-cart-btn">
+			              {{ HTML::image('img/white-cart.gif', 'Add order') }}
+			               ADD ORDER
+			          	</button>
+			      		{{ Form::close() }}-->
+
+                    	{{ HTML::link('orders/order', 'Add order', array('class' => 'tertiary-btn')) }}
+                    	{{ HTML::link('/', 'Continue Shopping', array('class' => 'tertiary-btn')) }}
+
 	                </td>
 	            </tr>
 	        </table>
-	    </form>
+			@else
+				<p>There are no items</p>
+	    	@endif
 	</div><!-- end shopping-cart -->
 @stop
