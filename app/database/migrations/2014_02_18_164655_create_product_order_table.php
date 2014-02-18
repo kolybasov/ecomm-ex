@@ -30,7 +30,7 @@ class CreateProductOrderTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('product_order');
 	}
 
 }
