@@ -17,7 +17,11 @@ class CreateOrdersTable extends Migration {
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->tinyinteger('payment');
-			$table->integer('status')->unsigned()->default(1);
+			$table->integer('status_id')->unsigned()->default(1);
+			$table->foreign('status_id')->references('id')->on('statuses');
+			$table->integer('delivery_id')->unsigned();
+			$table->foreign('delivery_id')->references('id')->on('deliveries');
+			$table->string('address');
 			$table->string('comment');
 			$table->decimal('total', 6, 2);
 			$table->timestamps();
