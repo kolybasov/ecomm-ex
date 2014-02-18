@@ -15,7 +15,7 @@ class CreateDeliveriesTable extends Migration {
 		Schema::create('deliveries', function($table) {
 			$table->increments('id');
 			$table->string('title');
-			$table->string('description');
+			$table->text('description');
 			$table->timestamps();
 		});
 	}
