@@ -25,9 +25,9 @@
 	                        <tr>
 	                            <td>{{ HTML::link('/orders/vieworder/'.$order->id, $order->id) }}</td>
 	                            <td>{{ $order->created_at }}</td>
-	                            <td>{{ $order->total }}</td>
+	                            <td>${{ $order->total }}</td>
 	                            <td>
-	                            	{{ $order->status }}
+	                            	<span title="{{ $order->status->description }}">{{ $order->status->title }}</span>
 				                    <a href="/orders/cancelorder/{{ $order->id }}">
 				                        {{ HTML::image('img/remove.gif', 'Cancel order')}}
 				                    </a>

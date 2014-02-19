@@ -15,7 +15,12 @@
                 <div id="order-details">
                     <h1>Order Details</h1>
                     <h2>Order #{{ $order->id }}</h2>
-                    <p>Date: {{ $order->created_at }}</p>
+                    <p>
+                        Date: {{ $order->created_at }} <br>
+                        <span title="{{ $order->status->description }}">Status: {{ $order->status->title }}</span> <br>
+                        Address: {{ $order->address }} <br>
+                        Comment: {{ $order->comment }}
+                    </p>
                     <h2>Buyer Information</h2>
                     <p>
                         Name: {{ $order->user->firstname.' '.$order->user->lastname }}<br />
@@ -31,20 +36,16 @@
                             <th>Quantity</th>
                             <th>Subtotal</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Product Name</td>
-                            <td>$400</td>
-                            <td>1</td>
-                            <td>$400</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Product Name</td>
-                            <td>$400</td>
-                            <td>2</td>
-                            <td>$800</td>
-                        </tr>
+                        @foreach ($order->products as $product)
+                            <tr>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->title }}</td>
+                                <td>{{ $product->pivot->price }}</td>
+                                <td>{{ $product->pivot->count }}</td>
+                                <td>{{ $product->pivot->count*$product->pivot->price }}</td>
+                            </tr>
+                        @endforeach
+
                         <tr class="total">
                             <td colspan="5">
                                 Subtotal: ${{ $order->total }}<br />

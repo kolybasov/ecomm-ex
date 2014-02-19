@@ -26,13 +26,33 @@ class OrdersController extends BaseController
 
 	public function postAddorder()
 	{
+		$data = Input::all();
+		$data['user_id'] = Auth::user()->id;
+		$data['status_id'] = 1;
+		$data['total'] = Cart::total();
+		$validator = Validator::make($data, Order::$rules);
+
+		if ($validator->fails()) {
+			return Redirect::to('orders/order')
+				->with('message', 'Wrong credentials!')
+				->withErrors($validator->errors())
+				->withInput();
+		}
+
 		$order = new Order;
-		$order->user_id = Auth::user()->id;
-		$order->payment = Input::get('payment');
-		$order->status = 1;
-		$order->comment = Input::get('comment');
-		$order->total = Cart::total();
-		$order->save();
+		$order->user_id = $data['user_id'];
+		$order->payment = $data['payment'];
+		$order->status_id = $data['status_id'];
+		$order->delivery_id = $data['delivery_id'];
+		$order->address = $data['address'];
+		$order->comment = $data['comment'];
+		$order->total = $data['total'];
+		$order->save();		
+
+		foreach (Cart::contents() as $item) {
+	        $products[$item->id] = array('count' => $item->quantity, 'price' => $item->price);
+		}
+		$order->products()->sync($products);
 
 		Cart::destroy();
 
@@ -43,7 +63,7 @@ class OrdersController extends BaseController
 	public function getCancelorder($id)
 	{
 		$order = Order::find($id);
-		$order->status = 2;
+		$order->status_id = 2;
 		$order->save();
 
 		return Redirect::to('orders/ordershistory')
@@ -59,6 +79,11 @@ class OrdersController extends BaseController
 
 	public function getOrder()
 	{
-		return View::make('orders.index');
+		$deliveries = array();
+		foreach (Delivery::all() as $delivery) {
+			$deliveries[$delivery->id] = $delivery->title;
+		}
+		return View::make('orders.index')
+			->with('deliveries', $deliveries);
 	}
 }

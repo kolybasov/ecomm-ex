@@ -21,6 +21,14 @@
 	    	{{ Form::select('payment', array(1 => 'Cash', 2 => 'Cashless'), 1) }}
 	    </p>
 	    <p>
+	    	{{ Form::label('delivery_id', 'Delivery') }}
+	    	{{ Form::select('delivery_id', $deliveries) }}
+	    </p>
+	    <p>
+	    	{{ Form::label('address') }}
+	    	{{ Form::textarea('address') }}
+	    </p>
+	    <p>
 	    	{{ Form::label('comment') }}
 	    	{{ Form::textarea('comment') }}
 	    </p>
