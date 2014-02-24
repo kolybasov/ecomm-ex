@@ -21,7 +21,7 @@ class ProductsController extends BaseController {
   }
 
   public function postCreate() {
-    $validator = Validator::make(Input::all(), Product::$rules);
+    $validator = Validator::make(Input::except('specifications'), Product::$rules);
 
     if($validator->passes()) {
       $product = new Product;
@@ -34,6 +34,14 @@ class ProductsController extends BaseController {
       Image::make($image->getRealPath())->resize(468, 249)->save(public_path().'/img/products/'.$filename);
       $product->image = 'img/products/'.$filename;
       $product->save();
+
+      
+      foreach (Input::get('specifications') as $key => $specification)
+      {
+        $specifications[$specification] = array('value'=>Input::get('value')[$key]);
+      }
+      $product->specifications()->sync($specifications);
+
 
       return Redirect::to('admin/products/index')
         ->with('message', 'Product created!');
