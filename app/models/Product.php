@@ -24,4 +24,9 @@ class Product extends Eloquent {
     return $this->belongsTo('Category');
   }
 
+  public function specifications()
+  {
+    return $this->belongsToMany('Specification');
+  }
+
 }
