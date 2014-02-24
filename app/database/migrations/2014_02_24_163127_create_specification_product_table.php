@@ -18,6 +18,7 @@ class CreateSpecificationProductTable extends Migration {
 			$table->foreign('specification_id')->references('id')->on('specifications');
 			$table->integer('product_id')->unsigned();
 			$table->foreign('product_id')->references('id')->on('products');
+			$table->string('value');
 		});
 	}
 

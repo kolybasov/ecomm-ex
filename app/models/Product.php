@@ -26,7 +26,7 @@ class Product extends Eloquent {
 
   public function specifications()
   {
-    return $this->belongsToMany('Specification');
+    return $this->belongsToMany('Specification')->withPivot('value');
   }
 
 }
