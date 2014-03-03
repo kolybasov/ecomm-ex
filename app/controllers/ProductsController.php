@@ -10,18 +10,23 @@ class ProductsController extends BaseController {
 
   public function getIndex() {
     $categories = array();
+    $specs = array();
 
     foreach (Category::all() as $category) {
       $categories[$category->id] = $category->name;
+    }    
+    foreach (Specification::all() as $specification) {
+      $specs[$specification->id] = $specification->name;
     }
 
     return View::make('products.index')
       ->with('products', Product::all())
+      ->with('specs', $specs)
       ->with('categories', $categories);
   }
 
   public function postCreate() {
-    $validator = Validator::make(Input::except('specifications'), Product::$rules);
+    $validator = Validator::make(Input::except('specification_id','value'), Product::$rules);
 
     if($validator->passes()) {
       $product = new Product;
@@ -36,7 +41,7 @@ class ProductsController extends BaseController {
       $product->save();
 
       
-      foreach (Input::get('specifications') as $key => $specification)
+      foreach (Input::get('specification_id') as $key => $specification)
       {
         $specifications[$specification] = array('value'=>Input::get('value')[$key]);
       }
@@ -49,8 +54,8 @@ class ProductsController extends BaseController {
 
     return Redirect::to('admin/products/index')
       ->with('message', 'Something went wrong!')
-      ->withErrors($validator)
-      ->withInput();
+      ->withErrors($validator);
+      //->withInput();
   }
 
   public function postToggleAvailability() {

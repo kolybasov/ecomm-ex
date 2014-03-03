@@ -11,6 +11,12 @@
 
       <hr />
 
+      @foreach ($product->specifications as $specification)
+      {{ $specification->name }} : {{ $specification->pivot->value }} <br>
+      @endforeach
+      
+      <br> <hr />
+
       {{ Form::open(array('url' => 'store/addtocart')) }}
           {{ Form::label('quantity', 'Qty') }}
           {{ Form::text('quantity', 1, array('maxlength' => 2)) }}

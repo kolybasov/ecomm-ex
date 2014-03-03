@@ -17,7 +17,7 @@ class Product extends Eloquent {
     'description'   => 'required|min:28',
     'price'         => 'required|numeric',
     'availability'  => 'integer',
-    'image'         => 'required|image|mimes:jpeg,jpg,bmp,png,gif'
+    'image'         => 'image|mimes:jpeg,jpg,bmp,png,gif'
   );
 
   public function categories() {

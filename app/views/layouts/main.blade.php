@@ -61,7 +61,8 @@
                                             @if(Auth::user()->admin == 1) 
                                                 <li>{{ HTML::link('/admin/deliveries', 'Manage deliveries') }}</li>  
                                                 <li>{{ HTML::link('/admin/statuses', 'Manage statuses') }}</li>  
-                                                <li>{{ HTML::link('/admin/categories', 'Manage categories') }}</li>   
+                                                <li>{{ HTML::link('/admin/categories', 'Manage categories') }}</li>  
+                                                <li>{{ HTML::link('/admin/specifications', 'Manage specifications') }}</li>    
                                                 <li>{{ HTML::link('/admin/products', 'Manage products') }}</li>   
                                             @endif
                                             <li>{{ HTML::link('/orders/ordershistory', 'Orders history') }}</li>
@@ -171,8 +172,9 @@
             </footer>
         </div><!-- end wrapper -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
         <!-- <script>window.jQuery || document.write("{{ HTML::script('js/vendor/jquery-1.9.1.min.js') }}")</script> -->
+        {{ HTML::script('js/vendor/jquery-1.9.1.min.js') }}
         {{ HTML::script('js/plugins.js') }}
         {{ HTML::script('js/main.js') }}
 

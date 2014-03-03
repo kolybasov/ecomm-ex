@@ -64,6 +64,11 @@
       {{ Form::label('image', 'Choose an image') }}
       {{ Form::file('image') }}
     </p>
+    <p class="specs">
+      {{ Form::select('specification_id[]', $specs, 0) }}
+      {{ Form::text('value[]','') }}
+    </p>
+    <button id="add_spec">Додати</button>
     {{ Form::submit('Create Product', array('class' => 'secondary-cart-btn')) }}
     {{ Form::close() }}
 

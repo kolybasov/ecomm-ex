@@ -3,7 +3,7 @@
 /**
 * Specification Controller
 */
-class SpecificationController extends BaseController
+class SpecificationsController extends BaseController
 {
 	function __construct()
 	{
@@ -59,3 +59,4 @@ class SpecificationController extends BaseController
 		return Redirect::to('admin/specifications/index')
 		  ->with('message', 'Something went wrong. Try again!');
 		}
+}

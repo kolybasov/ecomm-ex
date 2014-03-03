@@ -16,6 +16,7 @@ Route::controller('admin/categories', 'CategoriesController');
 Route::controller('admin/products', 'ProductsController');
 Route::controller('admin/statuses', 'StatusesController');
 Route::controller('admin/deliveries', 'DeliveriesController');
+Route::controller('admin/specifications', 'SpecificationsController');
 Route::controller('store', 'StoreController');
 Route::controller('users', 'UsersController');
 Route::controller('orders', 'OrdersController');

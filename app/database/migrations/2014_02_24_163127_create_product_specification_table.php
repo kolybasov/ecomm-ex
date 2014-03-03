@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpecificationProductTable extends Migration {
+class CreateProductSpecificationTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,12 @@ class CreateSpecificationProductTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('specification_product', function($table) {
+		Schema::create('product_specification', function($table) {
 			$table->increments('id');
-			$table->integer('specification_id')->unsigned();
-			$table->foreign('specification_id')->references('id')->on('specifications');
 			$table->integer('product_id')->unsigned();
 			$table->foreign('product_id')->references('id')->on('products');
+			$table->integer('specification_id')->unsigned();
+			$table->foreign('specification_id')->references('id')->on('specifications');
 			$table->string('value');
 		});
 	}
@@ -29,7 +29,7 @@ class CreateSpecificationProductTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('specification_product');
+		Schema::drop('product_specification');
 	}
 
 }
