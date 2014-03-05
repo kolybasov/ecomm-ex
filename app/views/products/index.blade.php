@@ -67,8 +67,9 @@
     <p class="specs">
       {{ Form::select('specification_id[]', $specs, 0) }}
       {{ Form::text('value[]','') }}
+      <button class="del_spec">Delete</button>
     </p>
-    <button id="add_spec">Додати</button>
+    <button class="add_spec">Add</button>
     {{ Form::submit('Create Product', array('class' => 'secondary-cart-btn')) }}
     {{ Form::close() }}
 

@@ -27,6 +27,12 @@ class ProductsController extends BaseController {
 
   public function postCreate() {
     $validator = Validator::make(Input::except('specification_id','value'), Product::$rules);
+    if (!Input::has('specification_id') or !Input::has('value')) {
+      return Redirect::to('admin/products/index')
+        ->with('message', 'Something went wrong!')
+        ->withErrors($validator)
+        ->withInput(Input::except('specification_id', 'value'));
+    }
 
     if($validator->passes()) {
       $product = new Product;
@@ -54,8 +60,8 @@ class ProductsController extends BaseController {
 
     return Redirect::to('admin/products/index')
       ->with('message', 'Something went wrong!')
-      ->withErrors($validator);
-      //->withInput();
+      ->withErrors($validator)
+      ->withInput(Input::except('specification_id', 'value'));
   }
 
   public function postToggleAvailability() {
