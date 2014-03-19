@@ -47,6 +47,18 @@ class StoreController extends BaseController {
   }
 
   /**
+   * Show all products from selected company
+   * @param  integer $company_id
+   * @return Response
+   */
+  public function getCompany($company_id) {
+    return View::make('store.company')
+      ->with('products', Product::where('company_id', '=', $company_id)->paginate(6))
+      ->with('company', Company::find($company_id))
+      ->with('companies', Company::all());
+  }
+
+  /**
    * Searching products by keyword
    * @return Response
    */

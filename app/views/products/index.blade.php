@@ -49,6 +49,10 @@
       {{ Form::select('category_id', $categories) }}
     </p>
     <p>
+      {{ Form::label('company_id', 'Company') }}
+      {{ Form::select('company_id', $companies) }}
+    </p>
+    <p>
       {{ Form::label('title') }}
       {{ Form::text('title') }}
     </p>

@@ -11,6 +11,7 @@ class ProductsController extends BaseController {
   public function getIndex() {
     $categories = array();
     $specs = array();
+    $companies = array();
 
     foreach (Category::all() as $category) {
       $categories[$category->id] = $category->name;
@@ -18,11 +19,15 @@ class ProductsController extends BaseController {
     foreach (Specification::all() as $specification) {
       $specs[$specification->id] = $specification->name;
     }
+    foreach (Company::all() as $company) {
+      $companies[$company->id] = $company->name;
+    }
 
     return View::make('products.index')
       ->with('products', Product::all())
       ->with('specs', $specs)
-      ->with('categories', $categories);
+      ->with('categories', $categories)
+      ->with('companies', $companies);
   }
 
   public function postCreate() {
@@ -37,6 +42,7 @@ class ProductsController extends BaseController {
     if($validator->passes()) {
       $product = new Product;
       $product->category_id = Input::get('category_id');
+      $product->company_id = Input::get('company_id');
       $product->title = Input::get('title');
       $product->description = Input::get('description');
       $product->price = Input::get('price');

@@ -1,14 +1,21 @@
 @extends('layouts.main')
 
 @section('content')
-  <aside id="categories-menu">
-      <h3>COMPANIES</h3>
-      <ul>
-          @foreach($companies as $company)
-              <li>{{ HTML::link('#', $company->name) }}</li>
-          @endforeach
-      </ul>
-  </aside><!-- end categories-menu -->
+    <aside id="categories-menu">
+        <h3>COMPANIES</h3>
+        <ul>
+            @foreach($companies as $company)
+                <li>
+                  {{ HTML::link('/store/company/'.$company->id, $company->name) }}
+                  <ul>
+                      @foreach ($company->products as $prod)
+                        <li>{{ HTML::link('/store/view/'.$prod->id, $prod->title) }}</li>
+                      @endforeach
+                  </ul>
+                </li>
+            @endforeach
+        </ul>
+    </aside><!-- end categories-menu -->
 
   <div id="product-image">
       {{ HTML::image($product->image, $product->title) }}

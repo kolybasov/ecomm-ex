@@ -35,7 +35,7 @@ class Product extends Eloquent {
 
   public function company()
   {
-    return $this->hasOne('Company');
+    return $this->belongsTo('Company');
   }
 
 }

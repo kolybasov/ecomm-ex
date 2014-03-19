@@ -63,6 +63,7 @@
                                                 <li>{{ HTML::link('/admin/deliveries', 'Manage deliveries') }}</li>  
                                                 <li>{{ HTML::link('/admin/statuses', 'Manage statuses') }}</li>  
                                                 <li>{{ HTML::link('/admin/categories', 'Manage categories') }}</li>  
+                                                <li>{{ HTML::link('/admin/companies', 'Manage companies') }}</li>  
                                                 <li>{{ HTML::link('/admin/specifications', 'Manage specifications') }}</li>    
                                                 <li>{{ HTML::link('/admin/products', 'Manage products') }}</li>   
                                             @endif

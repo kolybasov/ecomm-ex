@@ -13,6 +13,7 @@
 
 Route::get('/', array('uses' => 'StoreController@getIndex'));
 Route::controller('admin/categories', 'CategoriesController');
+Route::controller('admin/companies', 'CompaniesController');
 Route::controller('admin/products', 'ProductsController');
 Route::controller('admin/statuses', 'StatusesController');
 Route::controller('admin/deliveries', 'DeliveriesController');
