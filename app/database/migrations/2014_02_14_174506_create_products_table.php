@@ -16,6 +16,8 @@ class CreateProductsTable extends Migration {
       $table->increments('id');
       $table->integer('category_id')->unsigned();
       $table->foreign('category_id')->references('id')->on('categories');
+      $table->integer('company_id')->unsigned();
+      $table->foreign('company_id')->references('id')->on('companies');
       $table->string('title');
       $table->text('description');
       $table->decimal('price', 6, 2);

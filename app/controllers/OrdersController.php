@@ -16,6 +16,13 @@ class OrdersController extends BaseController
 	      'getVieworder',
 	      'getOrder'
     	)));
+    	$this->beforeFilter('admin',array('only'=>'getIndex'));
+	}
+
+	public function getIndex()
+	{
+		return View::make('orders.all')
+			->with('orders', Order::paginate(10));
 	}
 
 	public function getOrdershistory()
@@ -73,8 +80,11 @@ class OrdersController extends BaseController
 	public function getVieworder($id)
 	{
 		$order = Order::find($id);
-		return View::make('orders.vieworder', compact('order'));
-		  //->with('order', Order::find($id));
+		if (Auth::user()->id == $order->user_id or Auth::user()->admin == 1) {
+			return View::make('orders.vieworder', compact('order'));
+		}
+		return Redirect::to('orders/ordershistory')
+		  ->with('message', 'Access denied!');
 	}
 
 	public function getOrder()

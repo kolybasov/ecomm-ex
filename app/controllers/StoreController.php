@@ -31,7 +31,8 @@ class StoreController extends BaseController {
    */
   public function getView($id) {
     return View::make('store.view')
-      ->with('product', Product::find($id));
+      ->with('product', Product::find($id))
+      ->with('companies', Company::all());
   }
 
   /**

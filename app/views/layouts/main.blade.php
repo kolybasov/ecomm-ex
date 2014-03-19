@@ -59,6 +59,7 @@
                                         <a href="#">{{ HTML::image('img/user-icon.gif', Auth::user()->firstname) }} {{ Auth::user()->firstname }} {{ HTML::image('img/down-arrow.gif', Auth::user()->firstname) }}</a>
                                         <ul>
                                             @if(Auth::user()->admin == 1) 
+                                                <li>{{ HTML::link('/orders/index', 'Manage orders') }}</li>  
                                                 <li>{{ HTML::link('/admin/deliveries', 'Manage deliveries') }}</li>  
                                                 <li>{{ HTML::link('/admin/statuses', 'Manage statuses') }}</li>  
                                                 <li>{{ HTML::link('/admin/categories', 'Manage categories') }}</li>  

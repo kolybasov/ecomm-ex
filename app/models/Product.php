@@ -29,4 +29,13 @@ class Product extends Eloquent {
     return $this->belongsToMany('Specification')->withPivot('value');
   }
 
+  public function comments() {
+    return $this->hasMany('Comment');
+  }
+
+  public function company()
+  {
+    return $this->hasOne('Company');
+  }
+
 }
