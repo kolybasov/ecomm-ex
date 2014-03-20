@@ -28,7 +28,7 @@
 
     {{ Form::open(array('url' => 'admin/specifications/create')) }}
     <p>
-      {{ Form::label('name', 'Ім'я) }}
+      {{ Form::label('name', 'Назва') }}
       {{ Form::text('name') }}
     </p>
     {{ Form::submit('Додати', array('class' => 'secondary-cart-btn')) }}

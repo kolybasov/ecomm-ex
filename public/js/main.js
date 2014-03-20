@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$('.add_spec').click(function(e){
 		e.preventDefault();
-		var button = $('.specs:last').clone();
+		var button = $('.specs-field:last').clone();
 		$(this).before(button);
 		$('input[name=\'value[]\']:last').val('');
 
