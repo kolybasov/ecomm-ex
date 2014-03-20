@@ -208,7 +208,7 @@ header a:link, header a:visited {
     top: 100%;
     border: 1px solid #c3c3c3;
     padding: 5px;
-    width: 160px;
+    width: 200px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -456,7 +456,7 @@ header a:link, header a:visited {
 #categories-menu,
 #my-account-menu {
     width: 180px;
-    border-right: 1px solid #aaa;
+    border-right: 0px solid #aaa;
     text-align: left;
     display: inline-block;
     *display: inline;
@@ -543,6 +543,13 @@ header a:link, header a:visited {
     font-size: 14px;
 }
 
+#product {
+    width: 920px;
+    float: right;
+    border-left:1px solid  #ccc;
+    padding-left: 15px;
+}
+
 /*---- pagination ---- */
 
 #pagination {
@@ -575,11 +582,12 @@ header a:link, header a:visited {
 }
 
 #product-image {
-    width: 45%;
+    width: 100%;
+    text-align: center;
 }
 
 #product-details {
-    width: 30%;
+    width: 70%;
 }
 
 #product-details h1 {
@@ -666,7 +674,7 @@ header a:link, header a:visited {
 
 #new-account p input,
 #personal-details p input {
-    width: 300px;
+    width: 200px;
     border: 1px solid #eee;
     padding: 10px;
     border-radius: 10px;
@@ -945,6 +953,9 @@ header a:link, header a:visited {
 .total {
     text-align: right;
 }
+.total td {
+    height: 100px;
+}
 
 .total span {
     font-weight: bold;
@@ -1021,11 +1032,12 @@ footer #my-account, footer #info {
 /* --- copyright, connect, payments --- */
 
 footer #copyright, footer #connect, footer #payments {
-    float: left;
+    /*float: left;*/
 }
 
 footer #copyright, footer #connect {
-    margin-right: 130px;
+    margin: 0 auto;
+    width: 1100px;
 }
 
 footer #copyright {
@@ -1038,6 +1050,7 @@ footer #copyright #store-desc {
 
 footer #copyright #store-copy {
     color: #c3c3c3;
+    text-align: right;
 }
 
 footer #logo {
@@ -1383,4 +1396,94 @@ button.cart-btn {
     h3 {
         page-break-after: avoid;
     }
+}
+.product-etc {
+    clear: both;
+    width: 920px;
+}
+.comments {
+    width: 430px;
+    float: left;
+}
+.specs {
+    width: 430px;
+    float: right;
+    margin-right: 20px;
+}
+.specs span {
+    width: 240px;
+}
+.comment-form {
+    border: 1px solid #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin: 0 0 10px 0;
+    text-align: justify;
+}
+
+.comment-btn, .del_spec, .add_spec, .specs-list {
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #f6f6f6;
+}
+.specs-list {
+    background-color: #fff;
+    padding: 8px;
+}
+.comment-date {
+    color: #CCC;
+    font-size: 0.8em;
+    float: right;
+    font-style: italic;
+    font-weight: normal;
+}
+.comment-del {
+    border: 0;
+    background-image: url(../img/del.gif);
+    color: transparent;
+    background-repeat: no-repeat;
+    background-color: white;
+    width: 12px;
+    height: 12px;
+    background-position: center;
+    float: right;
+    margin: 2px 0 0 10px;
+}
+.comments .body {
+    text-align: justify;
+}
+.comments h4 {
+    color: #5daad0;
+}
+.specs-title {
+    float: left;
+    width: 170px;
+    border-bottom: 1px solid #f6f6f6;
+}
+.specs-value {
+    float: left;
+    width: 260px;
+    border-bottom: 1px solid #f6f6f6;
+}
+.wish-btn {
+    float: right;
+    margin-top: -53px;
+}
+.order-btn {
+    background-color: #5daad0;
+    color: #FFF;
+    padding: 10px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0px 5px 0px #467f9c;
+    text-decoration: none;
+}
+.specs-list {
+
 }

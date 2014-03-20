@@ -2,26 +2,26 @@
 
 @section('content')
 	<section id="signin-form">
-        <h1>I have an account</h1>
+        <h1>Я маю акаунт</h1>
         {{ Form::open(array('url' => 'users/signin')) }}
             <p>
-            	{{ HTML::image('img/email.gif', 'Email Address') }}
+            	{{ HTML::image('img/email.gif', 'Email адреса') }}
                 {{ Form::text('email') }}
             </p>
             <p>
-            	{{ HTML::image('img/password.gif', 'Password') }}
+            	{{ HTML::image('img/password.gif', 'Пароль') }}
                 {{ Form::password('password') }}
             </p>
-            {{ Form::button('Sign In', array('type' => 'submit', 'class' => 'secondary-cart-btn')) }}
+            {{ Form::button('Увійти', array('type' => 'submit', 'class' => 'secondary-cart-btn')) }}
         {{ Form::close() }}
     </section><!-- end signin-form -->
 
     <section id="signup">
-	    <h2>I'm a new customer</h2>
+	    <h2>Я новий покупець</h2>
 	    <h3>
-	    	You can create an account in just a few simple steps.<br>
-	    	Click below to begin.
+	    	Ви можете створити акаунт за декілька простих кроків.<br>
+	    	Перейдіть за посиланням нижче.
 	    </h3>
-	    {{ HTML::link('users/newaccount', 'CREATE NEW ACCOUNT', array('class' => 'default-btn')) }}
+	    {{ HTML::link('users/newaccount', 'Створити новий акаунт', array('class' => 'default-btn')) }}
     </section><!--- end signup -->
 @stop

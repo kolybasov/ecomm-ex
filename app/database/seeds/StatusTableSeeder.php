@@ -6,11 +6,11 @@ class StatusTableSeeder extends Seeder
 	{
 		$statuses = array(
 			array(
-				'title' => 'Pending',
-				'description' => 'Your order is pending'),
+				'title' => 'Розглядається…',
+				'description' => 'Ваше замовлення очікує розгляду!'),
 			array(
-				'title' => 'Canceled',
-				'description' => 'Your order was canceled'),
+				'title' => 'Відмінено',
+				'description' => 'Ваше замовлення було відмінено!'),
 		);
 		DB::table('statuses')->insert($statuses);
 	}

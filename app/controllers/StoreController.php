@@ -30,9 +30,14 @@ class StoreController extends BaseController {
    * @return Response 
    */
   public function getView($id) {
-    return View::make('store.view')
-      ->with('product', Product::find($id))
-      ->with('companies', Company::all());
+    $product = Product::find($id);
+    if($product) {
+      return View::make('store.view')
+        ->with('product', $product)
+        ->with('companies', Company::all());
+    }
+    return Redirect::back()
+      ->with('message', 'Щось пішло не так');
   }
 
   /**
@@ -77,6 +82,10 @@ class StoreController extends BaseController {
   public function postAddtocart()
   {
     $product = Product::find(Input::get('id'));
+    if(!$product) {
+      return Redirect::back()
+        ->with('message', 'Щось пішло не так');
+    }
     $quantity = Input::get('quantity');
 
     Cart::insert(array(
@@ -108,6 +117,10 @@ class StoreController extends BaseController {
   public function getRemoveitem($identifier)
   {
     $item = Cart::item($identifier);
+    if(!$item) {
+      return Redirect::back()
+        ->with('message', 'Щось пішло не так');
+    }
     $item->remove();
     return Redirect::to('store/cart');
   }
@@ -141,10 +154,13 @@ class StoreController extends BaseController {
 
     if ($product) {
       Auth::user()->wishlist()->attach($product->id);
-    }
 
+      return Redirect::back()
+        ->with('message', 'Додано до списку бажаного!');
+    }
+      
     return Redirect::back()
-      ->with('message', 'Added to wishlist');
+      ->with('message', 'Щось пішло не так');
   }
 
   /**

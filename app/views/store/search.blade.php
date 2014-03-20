@@ -3,7 +3,7 @@
 @section('search-keyword')
   <hr>
   <section id="search-keyword">
-      <h1>Search Results for <span>{{ $keyword }}</span></h1>
+      <h1>Результати пошуку для <span>{{ $keyword }}</span></h1>
   </section><!-- end search-keyword -->
 @stop
 
@@ -21,7 +21,7 @@
           <p>{{ $product->description }}</p>
 
           <h5>
-            Availability:
+            Наявність:
             <span class="{{ Availability::displayClass($product->availability) }}">
               {{ Availability::display($product->availability) }}
             </span>
@@ -33,8 +33,8 @@
               {{ Form::hidden('id', $product->id) }}
               <button type="submit" class="cart-btn">
                 <span class="price">{{ $product->price }}</span>
-                {{ HTML::image('img/white-cart.gif', 'Add to cart') }}
-                ADD TO CART
+                {{ HTML::image('img/white-cart.gif', 'Додати до кошика') }}
+                Додати до кошика
               </button>
               {{ Form::close() }}
 

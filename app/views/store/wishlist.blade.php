@@ -3,12 +3,15 @@
 @section('content')
 	
 	<div id="shopping-cart">
-	    <h1>Wishlist</h1>
+	    <h1>Список бажаного</h1>
+	    @if ($products->count() == 0)
+	    	Список бажаного порожній
+	    @else
 	        <table border="1">
 	            <tr>
 	                <th>#</th>
-	                <th>Product Name</th>
-	                <th>Unit Price</th>
+	                <th>Назва</th>
+	                <th>Ціна</th>
 	            </tr>
 	            @foreach ($products as $product)
 		            <tr>
@@ -20,13 +23,15 @@
 		                <td>
 		                    ${{ $product->price }}
 		                    <a href="/store/removefromwishlist/{{ $product->id }}">
-		                        {{ HTML::image('img/remove.gif', 'Remove product')}}
+		                        {{ HTML::image('img/remove.gif', 'Видалити товар')}}
 		                    </a>
 		                </td>
 		            </tr>
 	            @endforeach
 	        </table>
-            {{ HTML::link('/', 'Continue Shopping', array('class' => 'tertiary-btn')) }}	
+            {{ HTML::link('/', 'Продовжити покупки', array('class' => 'tertiary-btn')) }}	
 	</div><!-- end shopping-cart -->
+
+	@endif
 
 @stop

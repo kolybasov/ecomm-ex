@@ -19,11 +19,11 @@ class CommentsController extends BaseController {
 			$comment->save();
 
 			return Redirect::back()
-				->with('message','Comment was added!');
+				->with('message','Коментар доданий!');
 		}
 
 		return Redirect::back()
-			->with('message', 'Something went wrong!');
+			->with('message', 'Щось пішло не так!');
 	}
 
 	public function postDelete() {
@@ -32,9 +32,9 @@ class CommentsController extends BaseController {
 		if($comment) {
 			$comment->delete();
 			return Redirect::back()
-				->with('message','Comment was deleted!');
+				->with('message','Коментар видалений!');
 		}
 		return Redirect::back()
-			->with('message', 'Something went wrong!');
+			->with('message', 'Щось пішло не так!');
 	}
 }

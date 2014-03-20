@@ -3,36 +3,27 @@
 @section('content')
 	
 	<div id="new-account">
-		<h1>Add New order</h1>
-	    @if($errors->has())
-	      <div id="form-errors">
-	        <p>The following errors have ocurred:</p>
-	        <ul>
-	          @foreach($errors->all() as $error)
-	            <li>{{ $error }}</li>
-	          @endforeach
-	        </ul>
-	      </div><!-- end form-errors -->
-	    @endif
+		<h1>Оформлення замовлення</h1>
+		@include('partials.errors', $errors)
 
 	    {{ Form::open(array('url' => 'orders/addorder')) }}
 	    <p>
-	    	{{ Form::label('payment') }}
-	    	{{ Form::select('payment', array(1 => 'Cash', 2 => 'Cashless'), 1) }}
+	    	{{ Form::label('payment', 'Тип платежу') }}
+	    	{{ Form::select('payment', array(1 => 'Готівковий', 2 => 'Безготівковий'), 1) }}
 	    </p>
 	    <p>
-	    	{{ Form::label('delivery_id', 'Delivery') }}
+	    	{{ Form::label('delivery_id', 'Служба доставки') }}
 	    	{{ Form::select('delivery_id', $deliveries) }}
 	    </p>
 	    <p>
-	    	{{ Form::label('address') }}
+	    	{{ Form::label('address', 'Адреса') }}
 	    	{{ Form::textarea('address') }}
 	    </p>
 	    <p>
-	    	{{ Form::label('comment') }}
+	    	{{ Form::label('comment','Коментар') }}
 	    	{{ Form::textarea('comment') }}
 	    </p>
-		{{ Form::submit('ADD NEW ORDER', array('class' => 'secondary-cart-btn')) }}
+		{{ Form::submit('Оформити', array('class' => 'secondary-cart-btn')) }}
 		{{ Form::close() }}
 
     </div><!-- end new-account -->

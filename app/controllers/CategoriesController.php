@@ -30,11 +30,11 @@ class CategoriesController extends BaseController {
       $category->save();
 
       return Redirect::to('admin/categories/index')
-        ->with('message', 'Category created!');
+        ->with('message', 'Категорія створена!');
     }
 
     return Redirect::to('admin/categories/index')
-      ->with('message', 'Something went wrong')
+      ->with('message', 'Щось пішло не так!')
       ->withErrors($validator)
       ->withInput();
   }
@@ -51,10 +51,10 @@ class CategoriesController extends BaseController {
       $category->delete();
 
       return Redirect::to('admin/categories/index')
-        ->with('message', 'Category deleted!');
+        ->with('message', 'Категорія видалена!');
     }
 
     return Redirect::to('admin/categories/index')
-      ->with('message', 'Something went wrong. Try again!');
+      ->with('message', 'Щось пішло не так!');
   }
 }

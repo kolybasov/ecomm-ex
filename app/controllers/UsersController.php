@@ -28,11 +28,11 @@ class UsersController extends BaseController
 			$user->save();
 
 			return Redirect::to('users/signin')
-				->with('message', 'Thank you for creating a new account. Please sign in!');
+				->with('message', 'Дякуємо за створення нового акаунту. Будь ласка, увійдіть!');
 		}
 
 		return Redirect::to('users/newaccount')
-			->with('message', 'Something went wrong')
+			->with('message', 'Щось пішло не так!')
 			->withErrors($validator)
 			->withInput();
 	}
@@ -46,17 +46,17 @@ class UsersController extends BaseController
 	{
 		if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')))) {
 			return Redirect::to('/')
-				->with('message', 'Thanks for signing in');
+				->with('message', 'Доброго дня!');
 		}
 
 		return Redirect::to('users/signin')
-			->with('message', 'Wrong credentials!');
+			->with('message', 'Неправильні дані!');
 	}
 
 	public function getSignout()
 	{
 		Auth::logout();
 		return Redirect::to('users/signin')
-			->with('message', 'You have beed sign out!');
+			->with('message', 'Ви успішно вийшли!');
 	}
 }

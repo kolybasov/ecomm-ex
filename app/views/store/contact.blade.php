@@ -2,25 +2,25 @@
 
 @section('content')
     <div id="contact-us">
-        <h1>Contact Us</h1>
+        <h1>Зв'яжіться з нами</h1>
 
         <hr />
 
-        <p>We are located at:</p>
+        <p>Ми знаходимося за адресою:</p>
 
         <p>
-            <span>eCommerce</span><br />
-            123 Main Street<br />
-            Suite A<br />
-            Los Angeles, CA 90014
+            <span>LoremIpsum</span><br />
+            Lorem ipsum dolor.<br />
+            Lorem ipsum.<br />
+            Lorem ipsum dolor sit.
         </p>
 
-        <p>For customer service please call us: <span>1-800-8888</span></p>
+        <p>Обслуговування клієнтів: <span>0-999-9999</span></p>
 
-        <p>Alternatively, you can contact <a href="mailto:support@shop.com">customer service by email</a>.</p>
+        <p>Також ви можете написати нам на <a href="mailto:support@shop.com">email</a>.</p>
 
         <hr />
 
-        <p class="note">* For order related inquiries, please use the contact information provided below.</p>
+        <p class="note">* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, consequuntur, temporibus repellendus laborum beatae atque aliquam iste nulla cum nesciunt enim voluptatum pariatur. Adipisci, minus aspernatur iusto earum maiores hic..</p>
     </div><!-- end contact-us -->
 @stop

@@ -2,15 +2,15 @@
 
 @section('content')
 	<div id="shopping-cart">
-	    <h1>Shopping Cart & Checkout</h1>
+	    <h1>Кошик і оформлення замовлення</h1>
 	    	@if (Cart::totalItems() > 0)
 	        <table border="1">
 	            <tr>
 	                <th>#</th>
-	                <th>Product Name</th>
-	                <th>Unit Price</th>
-	                <th>Quantity</th>
-	                <th>Subtotal</th>
+	                <th>Назва</th>
+	                <th>Ціна</th>
+	                <th>Кількість</th>
+	                <th>Сума</th>
 	            </tr>
 	            @foreach ($products as $product)
 		            <tr>
@@ -24,9 +24,9 @@
 		                    {{ $product->quantity }}
 		                </td>
 		                <td>
-		                    ${{ $product->price }}
+		                    ${{ $product->price*$product->quantity }}
 		                    <a href="/store/removeitem/{{ $product->identifier }}">
-		                        {{ HTML::image('img/remove.gif', 'Remove product')}}
+		                        {{ HTML::image('img/remove.gif', 'Видалити товар')}}
 		                    </a>
 		                </td>
 		            </tr>
@@ -34,26 +34,16 @@
 
 	            <tr class="total">
 	                <td colspan="5">
-	                    Subtotal: ${{ Cart::total() }}<br />
-	                    <span>TOTAL: ${{ Cart::total() }}</span><br />
+	                    <span>ЗАГАЛОМ: ${{ Cart::total() }}</span><br />
 
-                  		<!--{{ Form::open(array('url' => 'store/addorder')) }}
-			          	{{ Form::hidden('id', $product->id) }}
-
-			          	<button type="submit" class="secondary-cart-btn">
-			              {{ HTML::image('img/white-cart.gif', 'Add order') }}
-			               ADD ORDER
-			          	</button>
-			      		{{ Form::close() }}-->
-
-                    	{{ HTML::link('orders/order', 'Add order', array('class' => 'tertiary-btn')) }}
-                    	{{ HTML::link('/', 'Continue Shopping', array('class' => 'tertiary-btn')) }}
+                    	{{ HTML::link('orders/order', 'Оформити замовлення', array('class' => 'order-btn')) }}
+                    	{{ HTML::link('/', 'Продовжити покупки', array('class' => 'tertiary-btn')) }}
 
 	                </td>
 	            </tr>
 	        </table>
 			@else
-				<p>There are no items</p>
+				<p>Кошик порожній</p>
 	    	@endif
 	</div><!-- end shopping-cart -->
 @stop

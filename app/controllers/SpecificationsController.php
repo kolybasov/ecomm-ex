@@ -32,11 +32,11 @@ class SpecificationsController extends BaseController
 		  $specification->save();
 
 		  return Redirect::to('admin/specifications/index')
-		    ->with('message', 'Specification created!');
+		    ->with('message', 'Характеристика додана!');
 		}
 
 		return Redirect::to('admin/specifications/index')
-		  ->with('message', 'Something went wrong')
+		  ->with('message', 'Щось пішло не так!')
 		  ->withErrors($validator)
 		  ->withInput();
 	}
@@ -53,10 +53,10 @@ class SpecificationsController extends BaseController
 		  $specification->delete();
 
 		  return Redirect::to('admin/specifications/index')
-		    ->with('message', 'Specification deleted!');
+		    ->with('message', 'Характеристика видалена!');
 		}
 
 		return Redirect::to('admin/specifications/index')
-		  ->with('message', 'Something went wrong. Try again!');
+		  ->with('message', 'Щось пішло не так!');
 		}
 }

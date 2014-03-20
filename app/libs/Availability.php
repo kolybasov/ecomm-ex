@@ -4,9 +4,9 @@ class Availability {
 
   public static function display($availability) {
     if($availability == 0) {
-      echo "Out of Stock";
+      echo "Товар відсутній";
     } else if($availability == 1) {
-      echo "In Stock";
+      echo "Є в наявності";
     }
   }
 

@@ -10,4 +10,9 @@ $(document).ready(function(){
 			$(this).parent().remove();
 		});
 	});
+
+	// $('#categories-menu ul li ul').css('display','none');
+	// $('#categories-menu ul>li').click(function(){
+	// 	$(this+' ul').css('display', 'block');
+	// });
 });

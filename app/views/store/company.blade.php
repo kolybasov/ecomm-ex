@@ -6,7 +6,7 @@
     <hr>
 
     <aside id="categories-menu">
-        <h3>COMPANIES</h3>
+        <h3>КОМПАНІЇ</h3>
         <ul>
             @foreach($companies as $company)
                 <li>
@@ -26,10 +26,10 @@
 
             <h3><a href="/store/view/{{ $product->id }}">{{ $product->title }}</a></h3>
 
-            <p>{{ $product->description }}</p>
+            <p>{{ Textshorter::short(array('shorten'=>'true','str'=>$product->description, 'length'=>100)) }}</p>
 
             <h5>
-              Availability:
+              Наявність:
               <span class="{{ Availability::displayClass($product->availability) }}">
                 {{ Availability::display($product->availability) }}
               </span>
@@ -41,8 +41,8 @@
                 {{ Form::hidden('id', $product->id) }}
                 <button type="submit" class="cart-btn">
                     <span class="price">${{ $product->price }}</span>
-                    {{ HTML::image('img/white-cart.gif', 'Add to Cart') }}
-                    ADD TO CART
+                    {{ HTML::image('img/white-cart.gif', 'Придбати') }}
+                    Придбати
                 </button>
                 {{ Form::close() }}
             </p>
@@ -58,5 +58,5 @@
   <section id="pagination">
     {{ $products->links() }}
   </section><!-- end pagination -->
-
+  <hr>
 @stop

@@ -6,8 +6,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>eCommerce</title>
-        <meta name="description" content="">
+        <title>Роги&Копита</title>
+        <meta name="description" content="Lorem ipsum dolor sit amet.">
         <meta name="viewport" content="width=device-width">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -18,23 +18,20 @@
     </head>
     <body>
         <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <p class="chromeframe">Ви використовуєте <strong>застарілий</strong> Браузер. Будь ласка, <a href="http://browsehappy.com/">оновіть ваш браузер</a> або <a href="http://www.google.com/chromeframe/?redirect=true">активуйте Google Chrome Frame</a> для повноцінної роботи сайту.</p>
         <![endif]-->
 
         <div id="wrapper">
             <header>
-                <section id="top-area">
-                    <p>Phone orders: 1-800-0000 | Email us: <a href="mailto:office@shop.com">office@shop.com</a></p>
-                </section><!-- end top-area -->
                 <section id="action-bar">
                     <div id="logo">
-                        <a href="/"><span id="logo-accent">e</span>Commerce</a>
+                        <a href="/">Роги<span id="logo-accent">&</span>Копита</a>
                     </div><!-- end logo -->
 
                     <nav class="dropdown">
                         <ul>
                             <li>
-                                <a href="#">Shop by Category {{ HTML::image('img/down-arrow.gif', 'Shop by Category') }}</a>
+                                <a href="#">Категорії {{ HTML::image('img/down-arrow.gif', 'Категорії') }}</a>
                                 <ul>
                                   @foreach($catnav as $cat)
                                     <li>{{ HTML::link('/store/category/'.$cat->id, $cat->name) }}</li>
@@ -46,8 +43,8 @@
 
                     <div id="search-form">
                       {{ Form::open(array('url' => 'store/search', 'method' => 'get')) }}
-                      {{ Form::text('keyword', null, array('placeholder' => 'Search by keyword', 'class' => 'search')) }}
-                      {{ Form::submit('Search', array('class' => 'search submit')) }}
+                      {{ Form::text('keyword', null, array('placeholder' => 'Пошук…', 'class' => 'search')) }}
+                      {{ Form::submit('Знайти', array('class' => 'search submit')) }}
                       {{ Form::close() }}
                     </div><!-- end search-form -->
 
@@ -59,17 +56,19 @@
                                         <a href="#">{{ HTML::image('img/user-icon.gif', Auth::user()->firstname) }} {{ Auth::user()->firstname }} {{ HTML::image('img/down-arrow.gif', Auth::user()->firstname) }}</a>
                                         <ul>
                                             @if(Auth::user()->admin == 1) 
-                                                <li>{{ HTML::link('/orders/index', 'Manage orders') }}</li>  
-                                                <li>{{ HTML::link('/admin/deliveries', 'Manage deliveries') }}</li>  
-                                                <li>{{ HTML::link('/admin/statuses', 'Manage statuses') }}</li>  
-                                                <li>{{ HTML::link('/admin/categories', 'Manage categories') }}</li>  
-                                                <li>{{ HTML::link('/admin/companies', 'Manage companies') }}</li>  
-                                                <li>{{ HTML::link('/admin/specifications', 'Manage specifications') }}</li>    
-                                                <li>{{ HTML::link('/admin/products', 'Manage products') }}</li>   
+                                                <li>Розділи адміністратора:</li>
+                                                <li>{{ HTML::link('/orders/index', 'Всі замовлення') }}</li>  
+                                                <li>{{ HTML::link('/admin/deliveries', 'Служби доставки') }}</li>  
+                                                <li>{{ HTML::link('/admin/statuses', 'Статуси замовлень') }}</li>  
+                                                <li>{{ HTML::link('/admin/categories', 'Категорії товарів') }}</li>  
+                                                <li>{{ HTML::link('/admin/companies', 'Компанії виробники') }}</li>  
+                                                <li>{{ HTML::link('/admin/specifications', 'Характеристики товарів') }}</li>    
+                                                <li>{{ HTML::link('/admin/products', 'Керування товарами') }}</li>   
+                                                <li><hr></li>
                                             @endif
-                                            <li>{{ HTML::link('/orders/ordershistory', 'Orders history') }}</li>
-                                            <li>{{ HTML::link('/store/wishlist', 'Wishlist') }}</li>
-                                            <li>{{ HTML::link('/users/signout', 'Sign Out') }}</li>
+                                            <li>{{ HTML::link('/orders/ordershistory', 'Історія замовлень') }}</li>
+                                            <li>{{ HTML::link('/store/wishlist', 'Список бажаного') }}</li>
+                                            <li>{{ HTML::link('/users/signout', 'Вийти') }}</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -78,10 +77,10 @@
                             <nav id="signin" class="dropdown">
                                 <ul>
                                     <li>
-                                        <a href="#">{{ HTML::image('img/user-icon.gif', 'Sign In') }} Sign In {{ HTML::image('img/down-arrow.gif', 'Sign In') }}</a>
+                                        <a href="#">{{ HTML::image('img/user-icon.gif', 'Увійти') }} Увійти {{ HTML::image('img/down-arrow.gif', 'Увійти') }}</a>
                                         <ul>
-                                            <li>{{ HTML::link('/users/signin', 'Sign In') }}</li>
-                                            <li>{{ HTML::link('/users/newaccount', 'Sign Up') }}</li>
+                                            <li>{{ HTML::link('/users/signin', 'Увійти') }}</li>
+                                            <li>{{ HTML::link('/users/newaccount', 'Реєстрація') }}</li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -90,7 +89,7 @@
                     </div><!-- end user-menu -->
 
                     <div id="view-cart">
-                        <a href="/store/cart">{{ HTML::image('img/blue-cart.gif', 'View Cart') }} View Cart
+                        <a href="/store/cart">{{ HTML::image('img/blue-cart.gif', 'Кошик') }} Кошик
                             @if (Cart::totalItems())
                                ({{ Cart::totalItems() }})
                             @endif
@@ -116,35 +115,34 @@
             <hr />
 
             @yield('pagination')
-
             <footer>
                 <section id="contact">
-                    <h3>For phone orders please call 1-800-000. You<br>can also email us at <a href="mailto:office@shop.com">office@shop.com</a></h3>
+                    <h3>Для замовлення по телефону: 0-999-9999. Також<br>ви можете написати нам <a href="mailto:office@shop.com">office@shop.com</a></h3>
                 </section><!-- end contact -->
 
                 <hr />
 
                 <section id="links">
                     <div id="my-account">
-                        <h4>MY ACCOUNT</h4>
+                        <h4>МІЙ АКАУНТ</h4>
                         <ul>
-                            <li>{{ HTML::link('/users/signin', 'Sign In') }}</li>
-                            <li>{{ HTML::link('/users/newaccount', 'Sign Up') }}</li>
-                            <li><a href="/store/cart">Shopping Cart</a></li>
+                            <li>{{ HTML::link('/users/signin', 'Увійти') }}</li>
+                            <li>{{ HTML::link('/users/newaccount', 'Реєстрація') }}</li>
+                            <li><a href="/store/cart">Кошик</a></li>
                         </ul>
                     </div><!-- end my-account -->
                     <div id="info">
-                        <h4>INFORMATION</h4>
+                        <h4>ІНФОРМАЦІЯ</h4>
                         <ul>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Умови використання</a></li>
+                            <li><a href="#">Політика конфіденційності</a></li>
                         </ul>
                     </div><!-- end info -->
                     <div id="extras">
-                        <h4>EXTRAS</h4>
+                        <h4>Додатково</h4>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li>{{ HTML::link('/store/contact', 'Contact Us') }}</li>
+                            <li><a href="#">Про нас</a></li>
+                            <li>{{ HTML::link('/store/contact', 'Зв\'яжіться з нами') }}</li>
                         </ul>
                     </div><!-- end extras -->
                 </section><!-- end links -->
@@ -154,22 +152,11 @@
                 <section class="clearfix">
                     <div id="copyright">
                         <div id="logo">
-                            <a href="#"><span id="logo-accent">e</span>Commerce</a>
+                            <a href="#">Роги<span id="logo-accent">&</span>Копита</a>
                         </div><!-- end logo -->
-                        <p id="store-desc">This is a short description of the store.</p>
-                        <p id="store-copy">&copy; 2013 eCommerce. Theme designed by Adi Purdila.</p>
+                        <p id="store-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, error, dolore neque aliquid sint explicabo odit laborum cum tenetur accusamus debitis sapiente culpa. Sapiente, est, odio amet magnam quisquam reprehenderit..</p>
+                        <p id="store-copy">&copy; 2014 Роги&Копита.</p>
                     </div><!-- end copyright -->
-                    <div id="connect">
-                        <h4>CONNECT WITH US</h4>
-                        <ul>
-                            <li class="twitter"><a href="#">Twitter</a></li>
-                            <li class="fb"><a href="#">Facebook</a></li>
-                        </ul>
-                    </div><!-- end connect -->
-                    <div id="payments">
-                        <h4>SUPPORTED PAYMENT METHODS</h4>
-                        {{ HTML::image('img/payment-methods.gif', 'Supported Payment Methods') }}
-                    </div><!-- end payments -->
                 </section>
             </footer>
         </div><!-- end wrapper -->
@@ -181,11 +168,11 @@
         {{ HTML::script('js/main.js') }}
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
+        <!-- <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+        </script> -->
     </body>
 </html>

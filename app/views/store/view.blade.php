@@ -2,21 +2,23 @@
 
 @section('content')
     <aside id="categories-menu">
-        <h3>COMPANIES</h3>
+        <h3>КОМПАНІЇ</h3>
         <ul>
             @foreach($companies as $company)
                 <li>
                   {{ HTML::link('/store/company/'.$company->id, $company->name) }}
-                  <ul>
-                      @foreach ($company->products as $prod)
-                        <li>{{ HTML::link('/store/view/'.$prod->id, $prod->title) }}</li>
-                      @endforeach
-                  </ul>
+                  @if ($company->name == $product->company->name)
+                    <ul>
+                        @foreach ($company->products as $prod)
+                          <li>{{ HTML::link('/store/view/'.$prod->id, $prod->title) }}</li>
+                        @endforeach
+                    </ul>
+                  @endif
                 </li>
             @endforeach
         </ul>
     </aside><!-- end categories-menu -->
-
+  <div id="product">
   <div id="product-image">
       {{ HTML::image($product->image, $product->title) }}
   </div><!-- end product-image -->
@@ -26,68 +28,75 @@
 
       <hr />
 
-      @foreach ($product->specifications as $specification)
-      {{ $specification->name }} : {{ $specification->pivot->value }} <br>
-      @endforeach
-      
-      <br> <hr />
-
       {{ Form::open(array('url' => 'store/addtocart')) }}
-          {{ Form::label('quantity', 'Qty') }}
+          {{ Form::label('quantity', 'Кількість') }}
           {{ Form::text('quantity', 1, array('maxlength' => 2)) }}
           {{ Form::hidden('id', $product->id) }}
 
           <button type="submit" class="secondary-cart-btn">
-              {{ HTML::image('img/white-cart.gif', 'Add to Cart') }}
-               ADD TO CART
+              {{ HTML::image('img/white-cart.gif', 'Додати до кошика') }}
+              Придбати
           </button>
       {{ Form::close() }}
 
-      {{ Form::open(array('url' => 'store/addtowishlist')) }}
+      {{ Form::open(array('url' => 'store/addtowishlist', 'class' => 'wish-btn')) }}
           {{ Form::hidden('id', $product->id) }}
 
-          <button type="submit" class="secondary-cart-btn">
-              {{ HTML::image('img/white-cart.gif', 'Add to Wishlist') }}
-               ADD TO WISHLIST
+          <button type="submit" class="tertiary-btn">
+              {{ HTML::image('img/wish.gif', 'Add to Wishlist') }}
+               Додати до списку бажаного
           </button>
       {{ Form::close() }}
   </div><!-- end product-details -->
   <div id="product-info">
       <p class="price">${{ $product->price }}</p>
       <p>
-        Availability:
+        Наявність:
         <span class="{{ Availability::displayClass($product->availability) }}">
           {{ Availability::display($product->availability) }}
         </span>
       </p>
-      <p>Product Code: <span>{{ $product->id }}</span></p>
+      <p>Код товару: <span>{{ $product->id }}</span></p>
   </div><!-- end product-info -->
-      
-  <br> <hr>
-
+  <div class="product-etc">
+  <div class="comments">
+  <h2>Коментарі</h2>
+  <hr>
  @foreach ($product->comments as $comment)
-    <div class="comments">
-      <h4>
-        {{ $comment->user->firstname.' '.$comment->user->lastname.' | '.$comment->created_at }}
-        @if (Auth::user()->admin == 1)
-          {{ Form::open(array('url'=>'comments/delete')) }}
-          {{ Form::hidden('id', $comment->id) }}
-          {{ Form::submit('Delete!') }}
-          {{ Form::close() }}
-        @endif
-      </h4>
-      <p class="body">{{ $comment->body }}</p>
-    </div>
+    <h4>
+      {{ $comment->user->firstname.' '.$comment->user->lastname.' <span class="comment-date">'.$comment->created_at }}</span>
+      @if (Auth::user()->admin == 1)
+        {{ Form::open(array('url'=>'comments/delete')) }}
+        {{ Form::hidden('id', $comment->id) }}
+        {{ Form::submit('Видалити', array('class' => 'comment-del')) }}
+        {{ Form::close() }}
+      @endif
+    </h4>
+    <p class="body">{{ $comment->body }}</p>
   @endforeach
   {{ Form::open(array('url'=>'comments/create')) }}
-  {{ Form::label('body', 'Leave your comment:') }} <br>
+  {{ Form::label('body', 'Залиште коментар:') }} <br>
   @if (Auth::guest())
-    {{ Form::textarea('body', 'Registration required!') }}
+    {{ Form::textarea('body', 'Необхідна реєстрація!', array('class' => 'comment-form')) }}
   @else
-    {{ Form::textarea('body') }}
+    {{ Form::textarea('body', null, array('class' => 'comment-form')) }}
   @endif
   {{ Form::hidden('product_id', $product->id) }} <br>
-  {{ Form::submit('Send comment!') }}
+  {{ Form::submit('Надіслати!', array('class' => 'comment-btn')) }}
   {{ Form::close() }}
+    
+  </div>
+  <div class="specs">
+      <h2>Характеристики</h2>
+      <hr>
+      @foreach ($product->specifications as $specification)
+        <div class="specs-title">{{ $specification->name }}</div>
+        <div class="specs-value">{{ $specification->pivot->value }}</div>
+      @endforeach
+  </div>
+    
+  </div>
+
+  </div>    
 
 @stop

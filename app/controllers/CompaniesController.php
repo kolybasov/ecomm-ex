@@ -30,11 +30,11 @@ class CompaniesController extends BaseController {
       $company->save();
 
       return Redirect::to('admin/companies/index')
-        ->with('message', 'Company created!');
+        ->with('message', 'Компанія створена!');
     }
 
     return Redirect::to('admin/companies/index')
-      ->with('message', 'Something went wrong')
+      ->with('message', 'Щось пішло не так!')
       ->withErrors($validator)
       ->withInput();
   }
@@ -51,10 +51,10 @@ class CompaniesController extends BaseController {
       $company->delete();
 
       return Redirect::to('admin/companies/index')
-        ->with('message', 'Company deleted!');
+        ->with('message', 'Компанія видалена!');
     }
 
     return Redirect::to('admin/companies/index')
-      ->with('message', 'Something went wrong. Try again!');
+      ->with('message', 'Щось пішло не так!');
   }
 }

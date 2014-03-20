@@ -32,11 +32,11 @@ class StatusesController extends BaseController
 		  $status->save();
 
 		  return Redirect::to('admin/statuses/index')
-		    ->with('message', 'Status created!');
+		    ->with('message', 'Статус замовлення доданий!');
 		}
 
 		return Redirect::to('admin/statuses/index')
-		  ->with('message', 'Something went wrong')
+		  ->with('message', 'Щось пішло не так!')
 		  ->withErrors($validator)
 		  ->withInput();
 	}
@@ -53,10 +53,10 @@ class StatusesController extends BaseController
 		  $status->delete();
 
 		  return Redirect::to('admin/statuses/index')
-		    ->with('message', 'Status deleted!');
+		    ->with('message', 'Статус замовлення видалений!');
 		}
 
 		return Redirect::to('admin/statuses/index')
-		  ->with('message', 'Something went wrong. Try again!');
+		  ->with('message', 'Щось пішло не так!');
 		}
 }

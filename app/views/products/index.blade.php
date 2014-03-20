@@ -3,11 +3,11 @@
 @section('content')
 
   <div id="admin">
-    <h1>Admin panel</h1><hr>
+    <h1>Панель адміністратора</h1><hr>
 
-    <p>Here you can view, delete, and create new products.</p>
+    <p>Тут ви можете переглядати, додавати і видаляти товари.</p>
 
-    <h2>Products</h2><hr>
+    <h2>Товари</h2><hr>
 
     <ul>
       @foreach($products as $product)
@@ -16,65 +16,55 @@
           {{ $product->title }} -
           {{ Form::open(array('url' => 'admin/products/destroy', 'class' => 'form-inline')) }}
           {{ Form::hidden('id', $product->id) }}
-          {{ Form::submit('delete') }}
+          {{ Form::submit('видалити') }}
           {{ Form::close() }} -
 
           {{ Form::open(array('url' => 'admin/products/toggle-availability', 'class' => 'form-inline')) }}
           {{ Form::hidden('id', $product->id) }}
-          {{ Form::select('availability', array('1' => 'In Stock', '0' => 'Out of Stock'), $product->availability) }}
-          {{ Form::submit('Update') }}
+          {{ Form::select('availability', array('1' => 'Є в наявності', '0' => 'Відсутній'), $product->availability) }}
+          {{ Form::submit('Оновити') }}
           {{ Form::close() }}
         </li>
       @endforeach
     </ul>
 
 
-    <h2>Create New Product</h2><hr>
-
-    @if($errors->has())
-      <div id="form-errors">
-        <p>The following errors have ocurred:</p>
-
-        <ul>
-          @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div><!-- end form-errors -->
-    @endif
+    <h2>Додати новий товар</h2><hr>
+    
+    @include('partials.errors', $errors)
 
     {{ Form::open(array('url' => 'admin/products/create', 'files' => true)) }}
     <p>
-      {{ Form::label('category_id', 'Category') }}
+      {{ Form::label('category_id', 'Категорія') }}
       {{ Form::select('category_id', $categories) }}
     </p>
     <p>
-      {{ Form::label('company_id', 'Company') }}
+      {{ Form::label('company_id', 'Компанія') }}
       {{ Form::select('company_id', $companies) }}
     </p>
     <p>
-      {{ Form::label('title') }}
+      {{ Form::label('title', 'Назва') }}
       {{ Form::text('title') }}
     </p>
     <p>
-      {{ Form::label('description') }}
+      {{ Form::label('description', 'Опис') }}
       {{ Form::textarea('description') }}
     </p>
     <p>
-      {{ Form::label('price') }}
+      {{ Form::label('price', 'Ціна') }}
       {{ Form::text('price', null, array('class' => 'form-price')) }}
     </p>
     <p>
-      {{ Form::label('image', 'Choose an image') }}
+      {{ Form::label('image', 'Виберіть зображення') }}
       {{ Form::file('image') }}
     </p>
-    <p class="specs">
-      {{ Form::select('specification_id[]', $specs, 0) }}
+    <p class="specs-field">
+      {{ Form::select('specification_id[]', $specs, 0, array('class'=>'specs-list')) }}
       {{ Form::text('value[]','') }}
-      <button class="del_spec">Delete</button>
+      <button class="del_spec">видалити</button>
     </p>
-    <button class="add_spec">Add</button>
-    {{ Form::submit('Create Product', array('class' => 'secondary-cart-btn')) }}
+    <button class="add_spec">Додати характеристику</button> <br> <br>
+    {{ Form::submit('Додати', array('class' => 'secondary-cart-btn')) }}
     {{ Form::close() }}
 
   </div><!-- end admin -->

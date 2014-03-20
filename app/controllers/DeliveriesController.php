@@ -32,11 +32,11 @@ class DeliveriesController extends BaseController
 		  $delivery->save();
 
 		  return Redirect::to('admin/deliveries/index')
-		    ->with('message', 'Delivery created!');
+		    ->with('message', 'Служба доставки додана!');
 		}
 
 		return Redirect::to('admin/deliveries/index')
-		  ->with('message', 'Something went wrong')
+		  ->with('message', 'Щось пішло не так!')
 		  ->withErrors($validator)
 		  ->withInput();
 	}
@@ -53,10 +53,10 @@ class DeliveriesController extends BaseController
 		  $delivery->delete();
 
 		  return Redirect::to('admin/deliveries/index')
-		    ->with('message', 'Delivery deleted!');
+		    ->with('message', 'Служба доставки видалена!');
 		}
 
 		return Redirect::to('admin/deliveries/index')
-		  ->with('message', 'Something went wrong. Try again!');
+		  ->with('message', 'Щось пішло не так!');
 		}
 }

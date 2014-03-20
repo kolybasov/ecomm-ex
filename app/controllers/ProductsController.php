@@ -34,7 +34,7 @@ class ProductsController extends BaseController {
     $validator = Validator::make(Input::except('specification_id','value'), Product::$rules);
     if (!Input::has('specification_id') or !Input::has('value')) {
       return Redirect::to('admin/products/index')
-        ->with('message', 'Something went wrong!')
+        ->with('message', 'Щось пішло не так!')
         ->withErrors($validator)
         ->withInput(Input::except('specification_id', 'value'));
     }
@@ -61,11 +61,11 @@ class ProductsController extends BaseController {
 
 
       return Redirect::to('admin/products/index')
-        ->with('message', 'Product created!');
+        ->with('message', 'Товар доданий!');
     }
 
     return Redirect::to('admin/products/index')
-      ->with('message', 'Something went wrong!')
+      ->with('message', 'Щось пішло не так!')
       ->withErrors($validator)
       ->withInput(Input::except('specification_id', 'value'));
   }
@@ -77,11 +77,11 @@ class ProductsController extends BaseController {
       $product->availability = Input::get('availability');
       $product->save();
       return Redirect::to('admin/products/index')
-        ->with('message', 'Product updated');
+        ->with('message', 'Товар оновлений!');
     }
 
     return Redirect::to('admin/products/index')
-      ->with('message', 'Invalid product!');
+      ->with('message', 'Щось пішло не так!');
   }
 
   public function postDestroy() {
@@ -91,10 +91,10 @@ class ProductsController extends BaseController {
       File::delete('public/'.$product->image);
       $product->delete();
       return Redirect::to('admin/products/index')
-        ->with('message', 'Product deleted!');
+        ->with('message', 'Товар видалений!');
     }
 
     return Redirect::to('admin/products/index')
-      ->with('message', 'Something went wrong. Try again!');
+      ->with('message', 'Щось пішло не так!');
   }
 }

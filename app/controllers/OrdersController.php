@@ -41,7 +41,7 @@ class OrdersController extends BaseController
 
 		if ($validator->fails()) {
 			return Redirect::to('orders/order')
-				->with('message', 'Wrong credentials!')
+				->with('message', 'Поля заповнені неправильно!')
 				->withErrors($validator->errors())
 				->withInput();
 		}
@@ -64,27 +64,32 @@ class OrdersController extends BaseController
 		Cart::destroy();
 
 		return Redirect::to('orders/ordershistory')
-		  ->with('message', 'Order has been sent');
+		  ->with('message', 'Замовлення надіслане!');
 	}
 
 	public function getCancelorder($id)
 	{
 		$order = Order::find($id);
-		$order->status_id = 2;
-		$order->save();
+		if($order) {
+			$order->status_id = 2;
+			$order->save();
 
 		return Redirect::to('orders/ordershistory')
-		  ->with('message', 'Order has been canceled');
+		  ->with('message', 'Замовлення відхилене!');
+		}
+
+		return Redirect::back()
+		  ->with('message', 'Щось пішло не так!');
 	}
 
 	public function getVieworder($id)
 	{
 		$order = Order::find($id);
-		if (Auth::user()->id == $order->user_id or Auth::user()->admin == 1) {
+		if ((Auth::user()->id == $order->user_id or Auth::user()->admin == 1) and $order) {
 			return View::make('orders.vieworder', compact('order'));
 		}
 		return Redirect::to('orders/ordershistory')
-		  ->with('message', 'Access denied!');
+		  ->with('message', 'Щось пішло не так!');
 	}
 
 	public function getOrder()

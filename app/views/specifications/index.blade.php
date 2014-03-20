@@ -3,11 +3,11 @@
 @section('content')
 	
   <div id="admin">
-    <h1>Admin panel</h1><hr>
+    <h1>Панель адміністратора</h1><hr>
 
-    <p>Here you can view, delete, and create new specifications.</p>
+    <p>Тут ви можете переглядати, додавати і видаляти характеристики.</p>
 
-    <h2>Specifications</h2><hr>
+    <h2>Характеристики</h2><hr>
 
     <ul>
       @foreach($specifications as $specification)
@@ -15,33 +15,23 @@
           {{ $specification->name }} —
           {{ Form::open(array('url' => 'admin/specifications/destroy', 'class' => 'form-inline')) }}
           {{ Form::hidden('id', $specification->id) }}
-          {{ Form::submit('delete') }}
+          {{ Form::submit('видалити') }}
           {{ Form::close() }}
         </li>
       @endforeach
     </ul>
 
 
-    <h2>Create New Specification</h2><hr>
-
-    @if($errors->has())
-      <div id="form-errors">
-        <p>The following errors have ocurred:</p>
-
-        <ul>
-          @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div><!-- end form-errors -->
-    @endif
+    <h2>Додати характеристику</h2><hr>
+    
+    @include('partials.errors', $errors)
 
     {{ Form::open(array('url' => 'admin/specifications/create')) }}
     <p>
-      {{ Form::label('name') }}
+      {{ Form::label('name', 'Ім'я) }}
       {{ Form::text('name') }}
     </p>
-    {{ Form::submit('Create Specification', array('class' => 'secondary-cart-btn')) }}
+    {{ Form::submit('Додати', array('class' => 'secondary-cart-btn')) }}
     {{ Form::close() }}
 
   </div><!-- end admin -->

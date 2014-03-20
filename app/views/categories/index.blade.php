@@ -3,11 +3,11 @@
 @section('content')
 
   <div id="admin">
-    <h1>Admin panel</h1><hr>
+    <h1>Панель адміністратора</h1><hr>
 
-    <p>Here you can view, delete, and create new categories.</p>
+    <p>Тут ви зможете переглядати, створювати і видаляти категорії.</p>
 
-    <h2>Categories</h2><hr>
+    <h2>Категорії</h2><hr>
 
     <ul>
       @foreach($categories as $category)
@@ -15,33 +15,23 @@
           {{ $category->name }} —
           {{ Form::open(array('url' => 'admin/categories/destroy', 'class' => 'form-inline')) }}
           {{ Form::hidden('id', $category->id) }}
-          {{ Form::submit('delete') }}
+          {{ Form::submit('видалити') }}
           {{ Form::close() }}
         </li>
       @endforeach
     </ul>
 
 
-    <h2>Create New Category</h2><hr>
+    <h2>Додати нову категорія</h2><hr>
 
-    @if($errors->has())
-      <div id="form-errors">
-        <p>The following errors have ocurred:</p>
-
-        <ul>
-          @foreach($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div><!-- end form-errors -->
-    @endif
+    @include('partials.errors', $errors)
 
     {{ Form::open(array('url' => 'admin/categories/create')) }}
     <p>
       {{ Form::label('name') }}
       {{ Form::text('name') }}
     </p>
-    {{ Form::submit('Create Category', array('class' => 'secondary-cart-btn')) }}
+    {{ Form::submit('Додати', array('class' => 'secondary-cart-btn')) }}
     {{ Form::close() }}
 
   </div><!-- end admin -->
