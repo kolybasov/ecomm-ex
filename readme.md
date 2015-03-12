@@ -12,4 +12,4 @@
   * pass - password
 
 ## Working example
-  http://vshop.eu1.frbit.net/
+  http://www.eidbadges.com/ 
